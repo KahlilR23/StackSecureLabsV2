@@ -6,7 +6,7 @@ import { useScrolled, useMobileNav } from "@/lib/hooks"
 import { NAV_LINKS, SITE } from "@/lib/constants"
 import { Button } from "@/components/ui/button"
 import { ThemeToggle } from "@/components/ui/theme-toggle"
-import { X, Menu } from "lucide-react"
+import { X, Menu, FolderLock } from "lucide-react"
 
 export function Header() {
   const scrolled = useScrolled()
@@ -26,14 +26,13 @@ export function Header() {
           <div className="flex items-center justify-between">
             {/* Logo */}
             <Link href="/" className="flex items-center gap-2.5">
-              <div className="relative w-9 h-9 bg-forest rounded-[10px] flex items-center justify-center overflow-hidden dark:bg-gold/90">
-                <span className="absolute w-[18px] h-[18px] border-[2.5px] border-gold rounded-full dark:border-forest-deep" />
-                <span className="absolute w-1.5 h-1.5 bg-gold rounded-full dark:bg-forest-deep" />
-              </div>
-              <span className="font-body text-[1.15rem] font-bold text-forest tracking-tight dark:text-cream">
-                StackSecure<span className="text-gold-dark dark:text-gold">Labs</span>
-              </span>
-            </Link>
+            <div className="w-9 h-9 bg-forest rounded-[10px] flex items-center justify-center dark:bg-gold/90">
+              <FolderLock size={20} className="text-gold dark:text-forest-deep" strokeWidth={2} />
+            </div>
+            <span className="font-body text-[1.15rem] font-bold text-forest tracking-tight dark:text-cream">
+              StackSecure<span className="text-gold-dark dark:text-gold">Labs</span>
+            </span>
+          </Link>
 
             {/* Desktop Nav */}
             <ul className="hidden lg:flex items-center gap-9">
